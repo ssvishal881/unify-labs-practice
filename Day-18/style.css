@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+.container {
+    max-width: 400px;
+    margin: auto;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1e7e34;
+}
+
+#eatBtn {
+    background-color: #007bff;
+}
+
+#eatBtn:hover {
+    background-color: #0056b3;
+}
+
+#sleepBtn {
+    background-color: #ffc107;
+    color: black;
+}
+
+#sleepBtn:hover {
+    background-color: #d39e00;
+}
