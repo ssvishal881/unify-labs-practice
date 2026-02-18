@@ -1,0 +1,32 @@
+body {
+    font-family: Arial;
+    background-color: #f4f4f4;
+    color: black;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+}
+
+.setting {
+    margin: 15px 0;
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+.dark-mode .container {
+    background-color: #1e1e1e;
+}
+
+select, input {
+    margin-left: 10px;
+}
