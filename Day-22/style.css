@@ -1,0 +1,214 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f8;
+    color: #222;
+    transition: 0.3s;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background-color: #1e1e2f;
+    color: white;
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    margin: 0;
+    margin-right: auto;
+}
+
+
+/* =========================
+   INPUTS & BUTTONS
+========================= */
+
+input, select, button {
+
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+button {
+
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+
+    background-color: #0056b3;
+}
+
+
+/* =========================
+   CARD CONTAINER
+========================= */
+
+.card-container {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+
+/* =========================
+   CARD STYLE
+========================= */
+
+.card {
+
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 200px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+    transition: transform 0.2s;
+}
+
+.card:hover {
+
+    transform: scale(1.05);
+}
+
+.card img {
+
+    width: 50px;
+    height: 50px;
+}
+
+.card h3 {
+
+    margin: 10px 0 5px;
+}
+
+.card p {
+
+    margin: 5px 0;
+}
+
+
+/* =========================
+   SPINNER
+========================= */
+
+.spinner {
+
+    border: 6px solid #eee;
+    border-top: 6px solid #007bff;
+
+    border-radius: 50%;
+
+    width: 50px;
+    height: 50px;
+
+    margin: 30px auto;
+
+    animation: spin 1s linear infinite;
+}
+
+.hidden {
+
+    display: none;
+}
+
+@keyframes spin {
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================
+   NOTIFICATION
+========================= */
+
+#notification {
+
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+.dark {
+
+    background-color: #121212;
+    color: white;
+}
+
+.dark header {
+
+    background-color: #000;
+}
+
+.dark .card {
+
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.dark input,
+.dark select {
+
+    background-color: #333;
+    color: white;
+    border: 1px solid #555;
+}
+
+.dark button {
+
+    background-color: #444;
+}
+
+.dark button:hover {
+
+    background-color: #666;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+    .card-container {
+
+        justify-content: center;
+    }
+
+    header {
+
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+}

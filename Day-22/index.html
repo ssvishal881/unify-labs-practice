@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PROJECT NEXUS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>🚀 PROJECT NEXUS</h1>
+
+    <input type="text" id="searchInput" placeholder="Search coins...">
+
+    <select id="sortSelect">
+        <option value="default">Sort By</option>
+        <option value="name">Name</option>
+        <option value="price">Price</option>
+    </select>
+
+    <button id="themeToggle">Toggle Theme</button>
+</header>
+
+<div id="loading" class="spinner hidden"></div>
+
+<div id="notification"></div>
+
+<div id="cardContainer" class="card-container"></div>
+
+<script type="module" src="App.js"></script>
+
+</body>
+</html>
