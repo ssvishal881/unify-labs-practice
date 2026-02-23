@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Backend Bridge - MongoDB Connection</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Backend Bridge</h1>
+
+    <p>This project connects Node.js to MongoDB</p>
+
+    <button onclick="showInstruction()">
+        Connect Database
+    </button>
+
+    <div id="status"></div>
+
+</div>
+
+<script>
+function showInstruction() {
+
+    document.getElementById("status").innerHTML =
+        "Run <b>node code.js</b> in terminal to connect MongoDB";
+}
+</script>
+
+</body>
+</html>
