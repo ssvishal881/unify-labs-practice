@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Shop Manager - Inventory Control</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>📦 Shop Inventory Manager</h1>
+
+    <div class="buttons">
+
+        <button onclick="insertSampleData()">Insert Sample Products</button>
+
+        <button onclick="increaseElectronicsPrice()">
+            Increase Electronics Price (+10)
+        </button>
+
+        <button onclick="setFeaturedProducts()">
+            Set Featured (Price > 500)
+        </button>
+
+        <button onclick="deleteZeroStock()">
+            Delete Zero Stock Products
+        </button>
+
+        <button onclick="showCount()">
+            Show Product Count
+        </button>
+
+        <button onclick="showAllProducts()">
+            Show All Products
+        </button>
+
+    </div>
+
+    <h2 id="countDisplay"></h2>
+
+    <div id="productList"></div>
+
+</div>
+
+<script src="code.js"></script>
+
+</body>
+</html>
