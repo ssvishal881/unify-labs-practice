@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Shop API Client</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h1>Shop API Client</h1>
+
+<input id="name" placeholder="Product Name">
+<input id="price" placeholder="Price" type="number">
+<input id="stock" placeholder="Stock" type="number">
+
+<button onclick="createProduct()">Create Product</button>
+<button onclick="getProducts()">View Products</button>
+
+<input id="updateId" placeholder="Product ID to Update">
+<input id="newStock" placeholder="New Stock" type="number">
+
+<button onclick="updateStock()">Update Stock</button>
+
+<input id="deleteId" placeholder="Product ID to Delete">
+
+<button onclick="deleteProduct()">Delete Product</button>
+
+<div id="output"></div>
+
+</div>
+
+<script>
+
+const API = "http://localhost:3000/products";
+
+
+async function createProduct() {
+
+    await fetch(API, {
+
+        method: "POST",
+
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+            name: name.value,
+            price: Number(price.value),
+            stock: Number(stock.value)
+        })
+
+    });
+
+    alert("Product created");
+}
+
+
+async function getProducts() {
+
+    const res = await fetch(API);
+
+    const data = await res.json();
+
+    output.innerHTML = JSON.stringify(data, null, 2);
+}
+
+
+async function updateStock() {
+
+    await fetch(API + "/" + updateId.value, {
+
+        method: "PATCH",
+
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+            stock: Number(newStock.value)
+        })
+
+    });
+
+    alert("Stock updated");
+}
+
+
+async function deleteProduct() {
+
+    await fetch(API + "/" + deleteId.value, {
+
+        method: "DELETE"
+    });
+
+    alert("Product deleted");
+}
+
+</script>
+
+</body>
+</html>
