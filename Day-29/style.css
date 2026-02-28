@@ -1,0 +1,91 @@
+body {
+
+font-family: 'Poppins', sans-serif;
+margin: 0;
+padding: 0;
+background: #f4f6f8;
+transition: 0.3s;
+}
+
+header {
+
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 20px;
+background: #111;
+color: white;
+}
+
+.editor {
+
+padding: 20px;
+}
+
+input, textarea, button {
+
+width: 100%;
+padding: 10px;
+margin-top: 10px;
+border-radius: 5px;
+border: 1px solid #ccc;
+}
+
+textarea {
+
+height: 120px;
+}
+
+button {
+
+background: #007bff;
+color: white;
+border: none;
+cursor: pointer;
+transition: 0.3s;
+}
+
+button:hover {
+
+background: #0056b3;
+}
+
+.grid {
+
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 15px;
+padding: 20px;
+}
+
+.card {
+
+background: white;
+padding: 15px;
+border-radius: 10px;
+box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+transition: 0.3s;
+}
+
+.card:hover {
+
+transform: translateY(-5px);
+}
+
+/* DARK MODE */
+
+.dark {
+
+background: #121212;
+color: white;
+}
+
+.dark .card {
+
+background: #1e1e1e;
+}
+
+.dark header {
+
+background: black;
+}

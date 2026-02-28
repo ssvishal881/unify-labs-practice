@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ZENITH Blogger</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<header>
+<h1>ZENITH Blogger</h1>
+<button onclick="toggleTheme()">Toggle Mode</button>
+</header>
+
+<section class="editor">
+<h2>Create Blog</h2>
+
+<input id="title" placeholder="Title">
+<input id="category" placeholder="Category">
+<textarea id="content" placeholder="Write your content..."></textarea>
+
+<button onclick="createPost()">Publish</button>
+</section>
+
+<section>
+<h2>All Posts</h2>
+<div id="postsGrid" class="grid"></div>
+</section>
+
+<script>
+
+const API = "http://localhost:3000/api/posts";
+
+async function fetchPosts() {
+
+const res = await fetch(API);
+const posts = await res.json();
+
+const grid = document.getElementById("postsGrid");
+grid.innerHTML = "";
+
+posts.forEach(post => {
+
+grid.innerHTML += `
+<div class="card">
+<h3>${post.title}</h3>
+<p><b>${post.category}</b></p>
+<p>${post.content.substring(0,100)}...</p>
+
+<button onclick="deletePost('${post._id}')">Delete</button>
+</div>
+`;
+});
+}
+
+async function createPost() {
+
+await fetch(API, {
+
+method: "POST",
+headers: { "Content-Type": "application/json" },
+
+body: JSON.stringify({
+title: title.value,
+category: category.value,
+content: content.value
+})
+
+});
+
+fetchPosts();
+}
+
+async function deletePost(id) {
+
+await fetch(API + "/" + id, { method: "DELETE" });
+
+fetchPosts();
+}
+
+function toggleTheme() {
+
+document.body.classList.toggle("dark");
+
+}
+
+fetchPosts();
+
+</script>
+
+</body>
+</html>
