@@ -1,0 +1,94 @@
+body {
+
+margin: 0;
+font-family: Arial, sans-serif;
+background: #f4f6f8;
+
+}
+
+header {
+
+padding: 15px;
+background: #111;
+color: white;
+display: flex;
+flex-direction: column;
+gap: 10px;
+
+}
+
+input, select, button {
+
+padding: 10px;
+margin-top: 5px;
+border-radius: 5px;
+border: 1px solid #ccc;
+
+}
+
+.grid {
+
+display: grid;
+grid-template-columns: 1fr;
+gap: 15px;
+padding: 15px;
+
+}
+
+.card {
+
+background: white;
+padding: 15px;
+border-radius: 10px;
+box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+transition: 0.3s;
+
+}
+
+.card:hover {
+
+transform: translateY(-5px);
+
+}
+
+button {
+
+background: #007bff;
+color: white;
+border: none;
+cursor: pointer;
+transition: 0.3s;
+
+}
+
+button:hover {
+
+background: #0056b3;
+
+}
+
+.cart, .checkout {
+
+padding: 15px;
+background: white;
+margin: 15px;
+
+}
+
+/* Desktop */
+@media(min-width: 768px){
+
+.grid {
+
+grid-template-columns: repeat(3, 1fr);
+
+}
+
+header {
+
+flex-direction: row;
+align-items: center;
+
+}
+
+}
