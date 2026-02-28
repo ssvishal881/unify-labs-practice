@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Cloud Shop (MongoDB Atlas)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h1>🌍 Cloud Shop - MongoDB Atlas</h1>
+
+<input id="name" placeholder="Product Name">
+<input id="price" type="number" placeholder="Price">
+<input id="stock" type="number" placeholder="Stock">
+
+<button onclick="addProduct()">Add Product</button>
+<button onclick="loadProducts()">View Products</button>
+
+<div id="output"></div>
+
+</div>
+
+<script>
+
+const API = "http://localhost:3000/products";
+
+async function addProduct() {
+
+    await fetch(API, {
+
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+
+        body: JSON.stringify({
+            name: name.value,
+            price: Number(price.value),
+            stock: Number(stock.value)
+        })
+    });
+
+    alert("Product saved to CLOUD!");
+}
+
+async function loadProducts() {
+
+    const res = await fetch(API);
+    const data = await res.json();
+
+    output.innerHTML = JSON.stringify(data, null, 2);
+}
+
+</script>
+
+</body>
+</html>
